@@ -1,6 +1,6 @@
 # Docker & Bash Practice
 
-Materi latihan (hands-on) untuk sesi mentoring **"Docker & Bash"** — Data Engineering, Dibimbing Batch 15.
+Materi latihan (hands-on) untuk sesi mentoring **"Docker & Bash"** — Data Engineering.
 
 Repo ini berisi contoh kode dan **langkah-langkah exercise** yang mengikuti urutan materi di slide:
 
