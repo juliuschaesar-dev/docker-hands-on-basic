@@ -1,0 +1,13 @@
+# Bash exercise outputs
+01-bash/output.txt
+05-makefile/output.txt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store
+Thumbs.db

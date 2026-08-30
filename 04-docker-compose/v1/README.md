@@ -1,0 +1,68 @@
+# 04 (v1) — Docker Compose: Multiple Services, Satu Aplikasi
+
+Tujuan: memahami bahwa Docker Compose bisa menjalankan beberapa service sekaligus dengan satu perintah, dan bedanya `build:` vs `image:` di `docker-compose.yaml`.
+
+File di folder ini:
+
+- `app.py`, `requirements.txt`, `Dockerfile` — sama seperti di [03-docker-containerization](../../03-docker-containerization/).
+- `docker-compose.yaml` — mendefinisikan 2 service dari aplikasi yang sama:
+  - `my-app-dockerfile` → di-**build** langsung dari `Dockerfile` di folder ini, expose di port `5051`.
+  - `my-app-image` → pakai **image jadi** bernama `dibimbing-docker-app` (yang kamu build di exercise 03), expose di port `5052`.
+
+## Persiapan
+
+Pastikan image `dibimbing-docker-app` sudah ada (dari exercise 03). Kalau belum:
+
+```bash
+docker build -t dibimbing-docker-app ../../03-docker-containerization
+```
+
+## Exercise 1 — Baca docker-compose.yaml
+
+1. Buka `docker-compose.yaml`, identifikasi: `services`, `build`, `image`, `environment`, `ports`.
+2. Diskusikan: apa bedanya service yang pakai `build:` dengan yang pakai `image:`?
+
+## Exercise 2 — Jalankan dengan Docker Compose
+
+1. Dari folder ini, jalankan semua service sekaligus di background.
+2. Cek semua container yang berjalan (harus ada 2 container).
+3. Buka `http://localhost:5051` → harus muncul `Hello, my-app-dockerfile!`.
+4. Buka `http://localhost:5052` → harus muncul `Hello, my-app-image!`.
+5. Stop semua service dengan satu perintah.
+
+<details>
+<summary>Solusi / Referensi Command</summary>
+
+```bash
+cd 04-docker-compose/v1
+docker-compose up -d
+docker ps -a
+# http://localhost:5051
+# http://localhost:5052
+docker-compose stop
+```
+
+Kalau di sistemmu perintahnya `docker compose` (tanpa strip, Compose V2 plugin), gunakan itu — keduanya setara.
+</details>
+
+## Exercise 3 — Bersihkan
+
+1. Hentikan dan hapus container + network yang dibuat compose (bukan cuma stop).
+2. Pastikan `docker ps -a` sudah bersih dari kedua service ini.
+
+<details>
+<summary>Solusi / Referensi Command</summary>
+
+```bash
+docker-compose down
+```
+</details>
+
+### Tantangan tambahan (opsional)
+
+- Tambahkan service ke-3 di `docker-compose.yaml` yang juga pakai `image: dibimbing-docker-app`, tapi dengan `CUSTOM_NAME` dan port yang berbeda.
+- Coba `docker-compose logs -f` sambil membuka salah satu URL di browser, lihat request masuk secara real-time.
+
+---
+
+Lanjut ke [v2](../v2/) untuk latihan multi-service dengan database & cache.
