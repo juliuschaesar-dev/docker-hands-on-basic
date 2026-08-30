@@ -50,13 +50,3 @@ docker images | grep dibimbing-docker-app
 ```
 </details>
 
-### Tantangan tambahan (opsional)
-
-1. Tambahkan target baru `docker-run` yang menjalankan container dari image `dibimbing-docker-app` (port `9100:8080`, detached, nama `my-app`).
-2. Tambahkan target `docker-clean` yang stop + remove container `my-app`.
-3. Tambahkan target `compose-up` dan `compose-down` yang memanggil `docker-compose up -d` / `docker-compose down` dari folder [04-docker-compose/v1](../04-docker-compose/v1/) (gunakan `cd ... &&` atau `-C` di dalam recipe, karena `make` selalu jalan dari direktori `Makefile`-nya).
-4. Update target `help` supaya mendokumentasikan semua target baru tersebut.
-
----
-
-Selamat, kamu sudah menyelesaikan seluruh rangkaian exercise Docker & Bash! Kembali ke [README utama](../README.md) untuk ringkasan.
