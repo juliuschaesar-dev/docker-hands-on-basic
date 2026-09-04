@@ -8,13 +8,7 @@ File yang sudah disiapkan di folder ini:
 - `requirements.txt` — dependency Python (`Flask`).
 - `Dockerfile` — resep untuk build image dari `app.py`.
 
-## Exercise 1 — Baca & pahami Dockerfile
-
-1. Buka `Dockerfile`, identifikasi tiap instruksi: `FROM`, `ARG`, `WORKDIR`, `COPY`, `RUN`, `EXPOSE`, `CMD`.
-2. Buka `app.py`, cari baris yang membaca environment variable `CUSTOM_NAME`.
-3. Diskusikan: kenapa `EXPOSE 8080` di Dockerfile harus konsisten dengan `app.run(port=8080)` di `app.py`?
-
-## Exercise 2 — Build image
+## Exercise 1 — Build image
 
 1. Dari dalam folder `03-docker-containerization`, build image dengan nama `dibimbing-docker-app`.
 2. Cek image sudah muncul di `docker images`.
@@ -29,7 +23,7 @@ docker images
 ```
 </details>
 
-## Exercise 3 — Run container dari image sendiri
+## Exercise 2 — Run container dari image sendiri
 
 1. Jalankan container dari image `dibimbing-docker-app`:
    - detached (`-d`)
@@ -49,7 +43,7 @@ docker logs my-app
 ```
 </details>
 
-## Exercise 4 — Ubah kode, rebuild
+## Exercise 3 — Ubah kode, rebuild
 
 1. Ubah default value `CUSTOM_NAME` di `app.py` menjadi nama kelas kamu, misalnya `'dibimbing-batch-15'`.
 2. Stop & hapus container `my-app` lama.
