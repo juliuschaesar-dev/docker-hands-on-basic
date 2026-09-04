@@ -39,18 +39,23 @@ cd ..
 
 Tujuan: bisa membuat, menyalin, memindahkan, dan menghapus file.
 
-1. Buat file kosong bernama `catatan.txt`.
-2. Tulis teks `"Halo Bash!"` ke dalam file tersebut (overwrite).
-3. Tambahkan baris baru `"Baris kedua"` ke file yang sama (append, jangan overwrite).
-4. Tampilkan isi file ke layar, pastikan ada 2 baris.
-5. Copy `catatan.txt` menjadi `catatan-copy.txt`.
-6. Rename `catatan-copy.txt` menjadi `catatan-backup.txt`.
-7. Hapus `catatan-backup.txt` (biarkan `catatan.txt` tetap ada, dipakai di Exercise 3).
+Kita kerjakan di dalam folder `playground` (dibuat di Exercise 1).
+
+1. Masuk ke folder `playground`.
+2. Buat file kosong bernama `catatan.txt`.
+3. Tulis teks `"Halo Bash!"` ke dalam file tersebut (overwrite).
+4. Tambahkan baris baru `"Baris kedua"` ke file yang sama (append, jangan overwrite).
+5. Tampilkan isi file ke layar, pastikan ada 2 baris.
+6. Copy `catatan.txt` menjadi `catatan-copy.txt`.
+7. Rename `catatan-copy.txt` menjadi `catatan-backup.txt`.
+8. Hapus `catatan-backup.txt` (biarkan `catatan.txt` tetap ada, dipakai di Exercise 3).
+9. Kembali ke folder `01-bash`.
 
 <details>
 <summary>Solusi / Referensi Command</summary>
 
 ```bash
+cd playground
 touch catatan.txt
 echo "Halo Bash!" > catatan.txt
 echo "Baris kedua" >> catatan.txt
@@ -58,6 +63,7 @@ cat catatan.txt
 cp catatan.txt catatan-copy.txt
 mv catatan-copy.txt catatan-backup.txt
 rm catatan-backup.txt
+cd ..
 ```
 </details>
 
@@ -65,15 +71,14 @@ rm catatan-backup.txt
 
 Tujuan: bisa membuat, menyalin, memindahkan, dan menghapus folder.
 
-Folder `playground` sudah dibuat di Exercise 1 — sekarang masuk ke dalamnya untuk mengisi dan mengelola isinya.
+Folder `playground` sudah dibuat di Exercise 1 dan berisi `catatan.txt` dari Exercise 2 — sekarang masuk ke dalamnya untuk mengisi dan mengelola isinya.
 
 1. Masuk ke folder `playground`.
 2. Buat 2 subfolder sekaligus dalam satu perintah: `data` dan `logs`.
-3. Copy `catatan.txt` (dari Exercise 2, ada di folder `01-bash`) ke dalam `data`.
+3. Copy `catatan.txt` (yang sudah ada di dalam `playground`, dari Exercise 2) ke dalam `data`.
 4. Pindahkan folder `logs` menjadi `archive`.
-5. Cek isi folder saat ini (harus ada `data/` dan `archive/`, tidak ada `logs/` lagi).
-6. Kembali ke folder `01-bash`.
-7. Hapus folder `playground` beserta seluruh isinya.
+5. Cek isi folder saat ini (harus ada `catatan.txt`, `data/`, dan `archive/`, tidak ada `logs/` lagi).
+6. Hapus folder `archive`.
 
 <details>
 <summary>Solusi / Referensi Command</summary>
@@ -81,11 +86,10 @@ Folder `playground` sudah dibuat di Exercise 1 — sekarang masuk ke dalamnya un
 ```bash
 cd playground
 mkdir -p data logs
-cp ../catatan.txt data/
+cp catatan.txt data/
 mv logs archive
 ls -la
-cd ..
-rm -rf playground
+rm -rf archive
 ```
 </details>
 
@@ -93,11 +97,14 @@ rm -rf playground
 
 Tujuan: memahami `rwx` dan `chmod`.
 
+Kamu masih berada di dalam folder `playground` dari Exercise 3, tempat `catatan.txt` berada.
+
 1. Cek permission `catatan.txt` saat ini (`ls -l`).
 2. Ubah permission `catatan.txt` supaya **owner** punya akses read+write+execute, **group** dan **others** hanya read (setara `744`).
 3. Cek lagi dengan `ls -l`, pastikan permission-nya berubah jadi `-rwxr--r--`.
 4. Ubah lagi jadi read/write/execute untuk semua (setara `777`).
 5. Jelaskan (tulis sebagai komentar/catatan) apa arti tiap digit pada `chmod 750`.
+6. Kembali ke folder `01-bash` (dipakai lagi di Exercise 5).
 
 <details>
 <summary>Solusi / Referensi Command</summary>
@@ -108,6 +115,7 @@ chmod 744 catatan.txt
 ls -l catatan.txt
 chmod 777 catatan.txt
 # chmod 750  -> owner: rwx (7), group: r-x (5), others: --- (0)
+cd ..
 ```
 </details>
 
