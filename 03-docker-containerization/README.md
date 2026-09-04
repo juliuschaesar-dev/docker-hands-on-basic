@@ -37,7 +37,7 @@ docker images
 <summary>Solusi / Referensi Command</summary>
 
 ```bash
-docker run -d --name my-app -e CUSTOM_NAME=Julius -p 9100:8080 dibimbing-docker-app
+docker run -d --name my-app -e CUSTOM_NAME=InsertNameHere -p 9100:8080 dibimbing-docker-app
 # buka http://localhost:9100
 docker logs my-app
 ```
