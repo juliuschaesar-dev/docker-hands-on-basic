@@ -1,5 +1,7 @@
 # 05 — Makefile
 
+> **Opsional untuk Windows.** `make` tidak tersedia bawaan di Windows, dan setup-nya (WSL + distro Linux asli, atau Chocolatey), pengguna windows bisa skip sesi ini.
+
 Makefile adalah blueprint untuk mengotomasi task berulang (build, run, clean, dsb) supaya perintah panjang cukup dipanggil lewat 1 kata pendek, misalnya `make run-script`.
 
 
