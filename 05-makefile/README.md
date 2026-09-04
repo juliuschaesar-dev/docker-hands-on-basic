@@ -19,7 +19,7 @@ File di folder ini:
 <summary>Solusi / Referensi Command</summary>
 
 ```bash
-cd 05-makefile
+cd ../../05-makefile
 make
 make run-script
 cat output.txt
