@@ -60,11 +60,6 @@ docker run -d --name my-app-v2 -p 9100:8080 docker-app:v2
 ```
 </details>
 
-### Tantangan tambahan (opsional)
-
-- Tambahkan `.dockerignore` supaya `__pycache__` dan file lokal lain tidak ikut ter-copy ke image.
-- Cek ukuran image (`docker images`) sebelum & sesudah ganti base image ke `python:3.8-slim`. Bandingkan.
-
 ---
 
 Lanjut ke [04-docker-compose](../04-docker-compose/) setelah selesai.
