@@ -34,7 +34,7 @@ Tujuan: menjalankan web server di background dengan port mapping dan nama contai
    - **port mapping**: port `9111` di host diarahkan ke port `80` di container
    - beri nama container **`simpleweb`**
 3. Buka `http://localhost:9111` di browser, pastikan web-nya muncul.
-4. Masuk (exec) ke dalam container `simpleweb` lewat `/bin/bash`, lalu cek isi source code web-nya (biasanya di `/usr/share/nginx/html` atau sesuai isi image).
+4. Masuk (exec) ke dalam container `simpleweb` lewat `/bin/bash`, lalu cek isi source code web-nya di folder `/code` (berisi `Dockerfile`, `index.py`, `index.html`, dsb).
 5. Keluar dari container tanpa mematikannya.
 
 <details>
@@ -48,7 +48,8 @@ docker run -d -p 9111:80 --name simpleweb yeasy/simple-web
 
 docker exec -it simpleweb /bin/bash
 # di dalam container:
-ls /usr/share/nginx/html
+ls /code
+cat /code/index.py
 exit
 ```
 </details>
@@ -90,7 +91,7 @@ docker rmi $(docker images -q)
 > Catatan: `docker rm $(docker ps -aq)` akan error kalau ada container yang masih running — stop dulu semua container, atau pakai `docker rm -f $(docker ps -aq)` untuk force remove (hati-hati, ini menghentikan paksa container yang masih jalan).
 </details>
 
-### Referensi command tambahan (dari slide)
+### Referensi command tambahan
 
 ```bash
 docker pull <image-name>
