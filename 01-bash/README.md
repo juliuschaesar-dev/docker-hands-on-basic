@@ -65,22 +65,26 @@ rm catatan-backup.txt
 
 Tujuan: bisa membuat, menyalin, memindahkan, dan menghapus folder.
 
-Folder `playground` sudah dibuat di Exercise 1 — sekarang isi dan kelola isinya.
+Folder `playground` sudah dibuat di Exercise 1 — sekarang masuk ke dalamnya untuk mengisi dan mengelola isinya.
 
-1. Di dalam `playground`, buat 2 subfolder sekaligus dalam satu perintah: `data` dan `logs`.
-2. Copy `catatan.txt` (dari Exercise 2) ke dalam `playground/data`.
-3. Pindahkan folder `playground/logs` menjadi `playground/archive`.
-4. Cek isi `playground` (harus ada `data/` dan `archive/`, tidak ada `logs/` lagi).
-5. Hapus folder `playground` beserta seluruh isinya.
+1. Masuk ke folder `playground`.
+2. Buat 2 subfolder sekaligus dalam satu perintah: `data` dan `logs`.
+3. Copy `catatan.txt` (dari Exercise 2, ada di folder `01-bash`) ke dalam `data`.
+4. Pindahkan folder `logs` menjadi `archive`.
+5. Cek isi folder saat ini (harus ada `data/` dan `archive/`, tidak ada `logs/` lagi).
+6. Kembali ke folder `01-bash`.
+7. Hapus folder `playground` beserta seluruh isinya.
 
 <details>
 <summary>Solusi / Referensi Command</summary>
 
 ```bash
-mkdir -p playground/data playground/logs
-cp catatan.txt playground/data/
-mv playground/logs playground/archive
-ls -la playground
+cd playground
+mkdir -p data logs
+cp ../catatan.txt data/
+mv logs archive
+ls -la
+cd ..
 rm -rf playground
 ```
 </details>
