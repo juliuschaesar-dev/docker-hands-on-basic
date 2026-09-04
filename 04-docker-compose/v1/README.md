@@ -36,8 +36,6 @@ docker ps -a
 # http://localhost:5052
 docker-compose stop
 ```
-
-Kalau di sistemmu perintahnya `docker compose` (tanpa strip, Compose V2 plugin), gunakan itu — keduanya setara.
 </details>
 
 ## Exercise 2 — Bersihkan
@@ -52,11 +50,6 @@ Kalau di sistemmu perintahnya `docker compose` (tanpa strip, Compose V2 plugin),
 docker-compose down
 ```
 </details>
-
-### Tantangan tambahan (opsional)
-
-- Tambahkan service ke-3 di `docker-compose.yaml` yang juga pakai `image: docker-app`, tapi dengan `CUSTOM_NAME` dan port yang berbeda.
-- Coba `docker-compose logs -f` sambil membuka salah satu URL di browser, lihat request masuk secara real-time.
 
 ---
 

@@ -22,7 +22,7 @@ File di folder ini:
 <summary>Solusi / Referensi Command</summary>
 
 ```bash
-cd 04-docker-compose/v2
+cd ../v2
 docker-compose up -d
 docker ps -a
 # http://localhost:5020
@@ -66,11 +66,6 @@ docker-compose stop
 docker-compose down          # volume tetap ada karena tidak pakai -v
 ```
 </details>
-
-### Tantangan tambahan (opsional)
-
-- Jalankan `docker-compose down -v` (menghapus volume juga), lalu `docker-compose up -d` lagi dan buka `/redis` — perhatikan counter hit-nya reset dari awal, tapi data Postgres di volume baru juga ikut hilang. Diskusikan bedanya container yang stateless (`app`, `redis`) vs. yang butuh persistent volume (`db`).
-- Tambahkan service `pgadmin` atau `redis-commander` ke `docker-compose.yaml` supaya bisa lihat data lewat GUI.
 
 ---
 
