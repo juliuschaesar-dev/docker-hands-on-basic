@@ -10,7 +10,7 @@ Repo ini berisi contoh kode dan **langkah-langkah exercise** yang mengikuti urut
 | 2 | [02-docker-run](02-docker-run/) | Docker Run — hello-world, simple-web, clean up | Lesson 4 (Demo: Docker - Run) |
 | 3 | [03-docker-containerization](03-docker-containerization/) | Bikin Dockerfile & build image sendiri (Flask app) | Demo: Docker - Containerization |
 | 4 | [04-docker-compose](04-docker-compose/) | Docker Compose v1 (multi image, satu app) & v2 (app + postgres + redis) | Demo: Docker - Compose |
-| 5 | [05-makefile](05-makefile/) | Makefile untuk otomasi task | Lesson 5 |
+| 5 | [05-makefile](05-makefile/) | Makefile untuk otomasi task (**opsional untuk Windows** — butuh setup `make` tambahan) | Lesson 5 |
 
 ## Prasyarat
 
