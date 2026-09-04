@@ -17,12 +17,7 @@ Pastikan image `docker-app` sudah ada (dari exercise 03). Kalau belum:
 docker build -t docker-app ../../03-docker-containerization
 ```
 
-## Exercise 1 — Baca docker-compose.yaml
-
-1. Buka `docker-compose.yaml`, identifikasi: `services`, `build`, `image`, `environment`, `ports`.
-2. Diskusikan: apa bedanya service yang pakai `build:` dengan yang pakai `image:`?
-
-## Exercise 2 — Jalankan dengan Docker Compose
+## Exercise 1 — Jalankan dengan Docker Compose
 
 1. Dari folder ini, jalankan semua service sekaligus di background.
 2. Cek semua container yang berjalan (harus ada 2 container).
@@ -45,7 +40,7 @@ docker-compose stop
 Kalau di sistemmu perintahnya `docker compose` (tanpa strip, Compose V2 plugin), gunakan itu — keduanya setara.
 </details>
 
-## Exercise 3 — Bersihkan
+## Exercise 2 — Bersihkan
 
 1. Hentikan dan hapus container + network yang dibuat compose (bukan cuma stop).
 2. Pastikan `docker ps -a` sudah bersih dari kedua service ini.

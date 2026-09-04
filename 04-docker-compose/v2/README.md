@@ -12,14 +12,7 @@ File di folder ini:
 - `Dockerfile` — build image untuk service `app`.
 - `docker-compose.yaml` — 3 service: `app`, `db` (postgres:13), `redis` (redis:alpine), plus 1 named volume `postgres-data` supaya data Postgres tidak hilang saat container dihapus.
 
-## Exercise 1 — Baca docker-compose.yaml
-
-1. Identifikasi 3 service-nya: `app`, `db`, `redis`.
-2. Cari bagian `depends_on` — apa fungsinya untuk urutan start container?
-3. Cari bagian `volumes` — kenapa `db` butuh volume tapi `app` dan `redis` tidak (di setup ini)?
-4. Perhatikan `DATABASE_URL` dan `REDIS_URL` di service `app` — kenapa host-nya `db` dan `redis`, bukan `localhost`?
-
-## Exercise 2 — Jalankan semua service
+## Exercise 1 — Jalankan semua service
 
 1. Dari folder ini, build & jalankan semua service di background.
 2. Cek semua container berjalan (`docker ps -a`), harus ada 3 container.
@@ -36,7 +29,7 @@ docker ps -a
 ```
 </details>
 
-## Exercise 3 — Test koneksi ke Postgres & Redis
+## Exercise 2 — Test koneksi ke Postgres & Redis
 
 1. Buka `http://localhost:5020/db` — pastikan muncul pesan versi Postgres.
 2. Buka `http://localhost:5020/redis` — refresh beberapa kali, pastikan angka hit bertambah.
@@ -58,7 +51,7 @@ docker exec -it <container_name_db> psql -U postgres -d mydb
 Cari nama container `db` dengan `docker ps` (biasanya `v2-db-1` atau `v2_db_1` tergantung versi compose).
 </details>
 
-## Exercise 4 — Lihat log & stop
+## Exercise 3 — Lihat log & stop
 
 1. Lihat log semua service secara bersamaan (follow mode).
 2. Hentikan semua service.
