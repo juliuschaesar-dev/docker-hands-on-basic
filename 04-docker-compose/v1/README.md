@@ -7,14 +7,14 @@ File di folder ini:
 - `app.py`, `requirements.txt`, `Dockerfile` — sama seperti di [03-docker-containerization](../../03-docker-containerization/).
 - `docker-compose.yaml` — mendefinisikan 2 service dari aplikasi yang sama:
   - `my-app-dockerfile` → di-**build** langsung dari `Dockerfile` di folder ini, expose di port `5051`.
-  - `my-app-image` → pakai **image jadi** bernama `dibimbing-docker-app` (yang kamu build di exercise 03), expose di port `5052`.
+  - `my-app-image` → pakai **image jadi** bernama `docker-app` (yang kamu build di exercise 03), expose di port `5052`.
 
 ## Persiapan
 
-Pastikan image `dibimbing-docker-app` sudah ada (dari exercise 03). Kalau belum:
+Pastikan image `docker-app` sudah ada (dari exercise 03). Kalau belum:
 
 ```bash
-docker build -t dibimbing-docker-app ../../03-docker-containerization
+docker build -t docker-app ../../03-docker-containerization
 ```
 
 ## Exercise 1 — Baca docker-compose.yaml
@@ -60,7 +60,7 @@ docker-compose down
 
 ### Tantangan tambahan (opsional)
 
-- Tambahkan service ke-3 di `docker-compose.yaml` yang juga pakai `image: dibimbing-docker-app`, tapi dengan `CUSTOM_NAME` dan port yang berbeda.
+- Tambahkan service ke-3 di `docker-compose.yaml` yang juga pakai `image: docker-app`, tapi dengan `CUSTOM_NAME` dan port yang berbeda.
 - Coba `docker-compose logs -f` sambil membuka salah satu URL di browser, lihat request masuk secara real-time.
 
 ---

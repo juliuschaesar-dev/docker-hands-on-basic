@@ -10,7 +10,7 @@ File yang sudah disiapkan di folder ini:
 
 ## Exercise 1 — Build image
 
-1. Dari dalam folder `03-docker-containerization`, build image dengan nama `dibimbing-docker-app`.
+1. Dari dalam folder `03-docker-containerization`, build image dengan nama `docker-app`.
 2. Cek image sudah muncul di `docker images`.
 
 <details>
@@ -18,14 +18,14 @@ File yang sudah disiapkan di folder ini:
 
 ```bash
 cd 03-docker-containerization
-docker build -t dibimbing-docker-app .
+docker build -t docker-app .
 docker images
 ```
 </details>
 
 ## Exercise 2 — Run container dari image sendiri
 
-1. Jalankan container dari image `dibimbing-docker-app`:
+1. Jalankan container dari image `docker-app`:
    - detached (`-d`)
    - beri nama container `my-app`
    - override environment variable `CUSTOM_NAME` menjadi nama kamu sendiri
@@ -37,7 +37,7 @@ docker images
 <summary>Solusi / Referensi Command</summary>
 
 ```bash
-docker run -d --name my-app -e CUSTOM_NAME=InsertNameHere -p 9100:8080 dibimbing-docker-app
+docker run -d --name my-app -e CUSTOM_NAME=InsertNameHere -p 9100:8080 docker-app
 # buka http://localhost:9100
 docker logs my-app
 ```
@@ -45,9 +45,9 @@ docker logs my-app
 
 ## Exercise 3 — Ubah kode, rebuild
 
-1. Ubah default value `CUSTOM_NAME` di `app.py` menjadi nama kelas kamu, misalnya `'dibimbing-batch-15'`.
+1. Ubah default value `CUSTOM_NAME` di `app.py` menjadi nama kelas kamu, misalnya `'docker-app-v2'`.
 2. Stop & hapus container `my-app` lama.
-3. Build ulang image (pakai tag versi baru, misalnya `dibimbing-docker-app:v2`).
+3. Build ulang image (pakai tag versi baru, misalnya `docker-app:v2`).
 4. Jalankan container baru dari image `:v2` tanpa override `CUSTOM_NAME`, pastikan default value baru muncul di browser.
 
 <details>
@@ -55,8 +55,8 @@ docker logs my-app
 
 ```bash
 docker stop my-app && docker rm my-app
-docker build -t dibimbing-docker-app:v2 .
-docker run -d --name my-app-v2 -p 9100:8080 dibimbing-docker-app:v2
+docker build -t docker-app:v2 .
+docker run -d --name my-app-v2 -p 9100:8080 docker-app:v2
 ```
 </details>
 

@@ -2,7 +2,7 @@
 FROM python:3.8
 
 # Define the argument variable (optional)
-ARG CUSTOM_NAME=dibimbing-docker-app
+ARG CUSTOM_NAME=docker-app
 
 # Set the working directory in the container
 WORKDIR /app

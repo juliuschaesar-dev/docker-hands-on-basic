@@ -1,6 +1,6 @@
 FROM python:3.8
 
-ARG CUSTOM_NAME=dibimbing-docker-app
+ARG CUSTOM_NAME=docker-app
 
 WORKDIR /app
 

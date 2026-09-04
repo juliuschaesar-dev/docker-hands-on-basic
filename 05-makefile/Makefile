@@ -13,7 +13,7 @@ run-script: $(SCRIPT)
 # Target to build the docker image (bagian tantangan, lihat README)
 docker-build:
 	@echo "Building docker image..."
-	docker build -t dibimbing-docker-app ../03-docker-containerization
+	docker build -t docker-app ../03-docker-containerization
 
 # Target to clean the output file
 clean:

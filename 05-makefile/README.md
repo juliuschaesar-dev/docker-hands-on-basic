@@ -46,7 +46,7 @@ Target `docker-build` di Makefile ini akan build image dari folder [03-docker-co
 
 ```bash
 make docker-build
-docker images | grep dibimbing-docker-app
+docker images | grep docker-app
 ```
 </details>
 

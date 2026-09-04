@@ -10,7 +10,7 @@ services:
       - "5051:8080"
 
   my-app-image:
-    image: dibimbing-docker-app
+    image: docker-app
     environment:
       - CUSTOM_NAME=my-app-image
     ports:
