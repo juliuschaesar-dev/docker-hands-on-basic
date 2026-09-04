@@ -104,7 +104,6 @@ Kamu masih berada di dalam folder `playground` dari Exercise 3, tempat `catatan.
 3. Cek lagi dengan `ls -l`, pastikan permission-nya berubah jadi `-rwxr--r--`.
 4. Ubah lagi jadi read/write/execute untuk semua (setara `777`).
 5. Jelaskan (tulis sebagai komentar/catatan) apa arti tiap digit pada `chmod 750`.
-6. Kembali ke folder `01-bash` (dipakai lagi di Exercise 5).
 
 <details>
 <summary>Solusi / Referensi Command</summary>
@@ -115,36 +114,8 @@ chmod 744 catatan.txt
 ls -l catatan.txt
 chmod 777 catatan.txt
 # chmod 750  -> owner: rwx (7), group: r-x (5), others: --- (0)
-cd ..
 ```
 </details>
-
-## Exercise 5 — Bash Script
-
-Tujuan: menulis script Bash sederhana yang interaktif (`read`), pakai variabel, dan menyimpan output ke file.
-
-File `simple-script.sh` sudah disediakan di folder ini (isinya sama seperti contoh di slide).
-
-1. Baca isi `simple-script.sh`, pahami alurnya: baca input `nama` & `umur`, cetak salam, lalu simpan ke `output.txt`.
-2. Beri izin eksekusi ke script tersebut (pakai `chmod` dari Exercise 4).
-3. Jalankan scriptnya, isi input saat diminta.
-4. Cek isi `output.txt` yang dihasilkan.
-
-<details>
-<summary>Solusi / Referensi Command</summary>
-
-```bash
-chmod +x simple-script.sh
-./simple-script.sh
-cat output.txt
-```
-</details>
-
-### Tantangan tambahan (opsional)
-
-Modifikasi `simple-script.sh` supaya:
-- Validasi kalau `umur` yang diinput bukan angka, script mencetak pesan error dan berhenti.
-- Menambahkan timestamp (`date`) di setiap baris yang ditulis ke `output.txt`.
 
 ---
 
