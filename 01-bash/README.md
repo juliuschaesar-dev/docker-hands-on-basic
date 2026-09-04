@@ -31,7 +31,7 @@ cd playground
 pwd
 cd -
 cd ~
-cd -
+cd ..
 ```
 </details>
 
