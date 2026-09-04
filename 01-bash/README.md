@@ -103,7 +103,6 @@ Kamu masih berada di dalam folder `playground` dari Exercise 3, tempat `catatan.
 2. Ubah permission `catatan.txt` supaya **owner** punya akses read+write+execute, **group** dan **others** hanya read (setara `744`).
 3. Cek lagi dengan `ls -l`, pastikan permission-nya berubah jadi `-rwxr--r--`.
 4. Ubah lagi jadi read/write/execute untuk semua (setara `777`).
-5. Jelaskan (tulis sebagai komentar/catatan) apa arti tiap digit pada `chmod 750`.
 
 <details>
 <summary>Solusi / Referensi Command</summary>
@@ -113,7 +112,6 @@ ls -l catatan.txt
 chmod 744 catatan.txt
 ls -l catatan.txt
 chmod 777 catatan.txt
-# chmod 750  -> owner: rwx (7), group: r-x (5), others: --- (0)
 ```
 </details>
 
