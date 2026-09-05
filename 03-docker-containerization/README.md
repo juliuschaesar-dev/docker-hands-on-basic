@@ -1,7 +1,5 @@
 # 03 — Docker Containerization
 
-Sekarang kita bikin image sendiri dari sebuah aplikasi Python (Flask), bukan cuma pakai image orang lain.
-
 File yang sudah disiapkan di folder ini:
 
 - `app.py` — aplikasi Flask sederhana, membaca environment variable `CUSTOM_NAME` dan menampilkannya di halaman web.
